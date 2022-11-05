@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Smori><a href="index.html"></a></title>
     <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
         html,
         body {
             background-color: #56B3F1;
@@ -92,104 +112,104 @@
         </symbol>
     </svg>
 
-    <div class="overflow-y: scroll">
-        <div id="duckContainer">
-            <svg id="duck">
-                <path fill="#F19C56" stroke-linecap="round" stroke-linejoin="round" stroke="#F19C56" stroke-width="20"
-                    d="M35 30 l20 0 Z" />
-                <ellipse cx="80" cy="30" rx="30" ry="30" fill="#fff" />
-                <ellipse cx="65" cy="20" rx="5" ry="5" fill="#000" />
-                <ellipse cx="130" cy="80" rx="60" ry="50" fill="#fff" />
-                <path id="hidden_water" fill="#56B3F1" stroke="#56B3F1" stroke-width="10"
-                    d="M5 100 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0 l0 35 l-250 0 Z" />
-                <path id="water" stroke-linecap="round" fill="none" stroke="#99D6FF" stroke-width="10"
-                    stroke-linejoin="round" d="M5 90 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0" />
-            </svg>
-        </div>
 
-
-
-        <div class="container">
-            <header class="p-3 mb-3 border-bottom">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                                <use xlink:href="#bootstrap" />
-                            </svg>
-                            <span class="fs-4">Smori</span>
-                        </a>
-
-                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                            <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-                            <li><a href="#" class="nav-link px-2 link-dark">Study</a></li>
-                            <li><a href="#" class="nav-link px-2 link-dark">Travel</a></li>
-                            <li><a href="#" class="nav-link px-2 link-dark">Life</a></li>
-                        </ul>
-
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="card col-md-3 mt-3 ms-3 me-lg-3" style="width: 18rem;">
-                        <img src="photo.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Smori</h5>
-                            <p class="card-text">I'm 25 years old. I think life is like travel.</p>
-                            <br />
-                            <span><i class="bi bi-envelope"></i> koseumoseu57@gmail.com</span>
-                            <br />
-                            <span style="white-space:nowrap"><i class="bi bi-github me-1"></i><a
-                                    href="https://github.com/summer2788">https://github.com/summer2788</a></span>
-
-
-                        </div>
-                    </div>
-
-                    <div class="card text-center card col-md-7 ms-3 mt-3 me-lg-auto ">
-                        <div class="card-header">
-                            Smori
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">My Favorites</h5>
-                            <p class="card-text">The universe is change. our life is what our thoughts make it.</p>
-                            <table class="table shadow bg-body rounded">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Section</th>
-                                        <th scope="col">Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Book</td>
-                                        <td>Cosmos</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Movie</td>
-                                        <td>Parasite</td>
-                                    </tr>
-                                    <tr>
-                                        <td>travel</td>
-                                        <td>Japan</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer text-muted">
-                            2 days ago
-                        </div>
-                    </div>
-                </div>
-
-            </header>
-        </div>
-
-
+    <div id="duckContainer">
+        <svg id="duck">
+            <path fill="#F19C56" stroke-linecap="round" stroke-linejoin="round" stroke="#F19C56" stroke-width="20"
+                d="M35 30 l20 0 Z" />
+            <ellipse cx="80" cy="30" rx="30" ry="30" fill="#fff" />
+            <ellipse cx="65" cy="20" rx="5" ry="5" fill="#000" />
+            <ellipse cx="130" cy="80" rx="60" ry="50" fill="#fff" />
+            <path id="hidden_water" fill="#56B3F1" stroke="#56B3F1" stroke-width="10"
+                d="M5 100 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0 l0 35 l-250 0 Z" />
+            <path id="water" stroke-linecap="round" fill="none" stroke="#99D6FF" stroke-width="10"
+                stroke-linejoin="round" d="M5 90 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0" />
+        </svg>
     </div>
+
+
+
+    <div class="container">
+        <header class="p-3 mb-3 border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                        <span class="fs-4">Smori</span>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
+                        <li><a href="#" class="nav-link px-2 link-dark">Study</a></li>
+                        <li><a href="#" class="nav-link px-2 link-dark">Travel</a></li>
+                        <li><a href="#" class="nav-link px-2 link-dark">Life</a></li>
+                    </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="card col-md-3 mt-3 ms-3 me-lg-3" style="width: 18rem;">
+                    <img src="photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Smori</h5>
+                        <p class="card-text">I'm 25 years old. I think life is like travel.</p>
+                        <br />
+                        <span><i class="bi bi-envelope"></i> koseumoseu57@gmail.com</span>
+                        <br />
+                        <span style="white-space:nowrap"><i class="bi bi-github me-1"></i><a
+                                href="https://github.com/summer2788">https://github.com/summer2788</a></span>
+
+
+                    </div>
+                </div>
+
+                <div class="card text-center card col-md-7 ms-3 mt-3 me-lg-auto ">
+                    <div class="card-header">
+                        Smori
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">My Favorites</h5>
+                        <p class="card-text">The universe is change. our life is what our thoughts make it.</p>
+                        <table class="table shadow bg-body rounded">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Section</th>
+                                    <th scope="col">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Book</td>
+                                    <td>Cosmos</td>
+                                </tr>
+                                <tr>
+                                    <td>Movie</td>
+                                    <td>Parasite</td>
+                                </tr>
+                                <tr>
+                                    <td>travel</td>
+                                    <td>Japan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+            </div>
+
+        </header>
+    </div>
+
+
+
 
 
 
