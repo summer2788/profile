@@ -81,8 +81,10 @@
             <path
                 d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
         </symbol>
-        <symbol id="duck">
-            <title>Duck</title>
+    </svg>
+
+    <div id="duckContainer">
+        <svg id="duck">
             <path fill="#F19C56" stroke-linecap="round" stroke-linejoin="round" stroke="#F19C56" stroke-width="20"
                 d="M35 30 l20 0 Z" />
             <ellipse cx="80" cy="30" rx="30" ry="30" fill="#fff" />
@@ -92,13 +94,6 @@
                 d="M5 100 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0 l0 35 l-250 0 Z" />
             <path id="water" stroke-linecap="round" fill="none" stroke="#99D6FF" stroke-width="10"
                 stroke-linejoin="round" d="M5 90 q25 20 50 0 q25 -20 50 0 q25 20 50 0 q25 -20 50 0 q25 20 50 0" />
-
-        </symbol>
-    </svg>
-
-    <div id="duckContainer">
-        <svg>
-            <use xlink:href="#duck" />
         </svg>
     </div>
 
@@ -131,6 +126,77 @@
         crossorigin="anonymous"></script>
     <script>
         /*CSS Code*/
+        var duck = document.getElementById('duck');
+        var dir = 'left';
+        var x = 790 / 2 - 260 / 2,
+            y = 290 / 2 - 130 / 2;
+        var keys = {};
+        document.addEventListener('keydown', function (e) {
+            keys[e.which] = true;
+        }, false);
+        document.addEventListener('keyup', function (e) {
+            keys[e.which] = false;
+        }, false);
+
+        function duckRight() {
+            duck.style.transform = "scale(-1.2, 1.2)";
+            dir = 'right';
+        }
+
+        function duckLeft() {
+            duck.style.transform = "scale(1.2, 1.2)";
+            dir = 'left';
+        }
+
+        var waterHeight = 20;
+        var addWater = false;
+        function animateWater() {
+            if (waterHeight <= -20) addWater = true;
+            if (waterHeight >= 20) addWater = false;
+            if (addWater) waterHeight++;
+            else waterHeight--;
+
+            $('#water').attr({
+                d: 'M5 90 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
+                    ' 50 0 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
+                    ' 50 0 q25 ' + waterHeight + ' 50 0'
+            });
+            $('#hidden_water').attr({
+                d: 'M5 90 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
+                    ' 50 0 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
+                    ' 50 0 q25 ' + waterHeight + ' 50 0 l0 35 l-250 0 Z'
+            });
+
+            setTimeout(animateWater, 20);
+        }
+        animateWater();
+
+        function update() {
+            if (keys[37]) {
+                x -= 1;
+                if (dir == 'right') {
+                    duckLeft();
+                }
+            }
+            if (keys[39]) {
+                x += 1;
+                if (dir == 'left') {
+                    duckRight();
+                }
+            }
+            if (keys[38]) {
+                y -= 1;
+            }
+            if (keys[40]) {
+                y += 1;
+            }
+
+            duck.style.top = y + "px";
+            duck.style.left = x + "px";
+
+            setTimeout(update, 5);
+        }
+        update();
 
     </script>
 </body>
