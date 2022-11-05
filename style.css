@@ -1,0 +1,41 @@
+html {
+    background-color: #56B3F1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #56B3F1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+#river {
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 400px);
+}
+
+#duckContainer {
+    z-index: 2;
+    width: 100%;
+    height: 50%;
+    position: relative;
+    left: calc(50% - 395px);
+    bottom: calc(50% - 395px);
+}
+
+#duck {
+    width: 260px;
+    height: 130px;
+    position: absolute;
+    top: calc(50% - 130px / 2);
+    left: calc(50% - 260px / 2);
+    z-index: 1;
+    transform: scale(1.2, 1.2);
+}
