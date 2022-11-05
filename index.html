@@ -45,7 +45,7 @@
             z-index: 2;
             width: 100%;
             height: 100%;
-            position: static;
+            position: relative;
             top: calc(50% - 135px);
             left: calc(50% - 395px);
         }
@@ -207,77 +207,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script>
-        var duck = document.getElementById('duck');
-        var dir = 'left';
-        var x = 790 / 2 - 260 / 2,
-            y = 290 / 2 - 130 / 2;
-        var keys = {};
-        document.addEventListener('keydown', function (e) {
-            keys[e.which] = true;
-        }, false);
-        document.addEventListener('keyup', function (e) {
-            keys[e.which] = false;
-        }, false);
 
-        function duckRight() {
-            duck.style.transform = "scale(-1.2, 1.2)";
-            dir = 'right';
-        }
-
-        function duckLeft() {
-            duck.style.transform = "scale(1.2, 1.2)";
-            dir = 'left';
-        }
-
-        var waterHeight = 20;
-        var addWater = false;
-        function animateWater() {
-            if (waterHeight <= -20) addWater = true;
-            if (waterHeight >= 20) addWater = false;
-            if (addWater) waterHeight++;
-            else waterHeight--;
-
-            $('#water').attr({
-                d: 'M5 90 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
-                    ' 50 0 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
-                    ' 50 0 q25 ' + waterHeight + ' 50 0'
-            });
-            $('#hidden_water').attr({
-                d: 'M5 90 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
-                    ' 50 0 q25 ' + waterHeight + ' 50 0 q25 ' + -waterHeight +
-                    ' 50 0 q25 ' + waterHeight + ' 50 0 l0 35 l-250 0 Z'
-            });
-
-            setTimeout(animateWater, 20);
-        }
-        animateWater();
-
-        function update() {
-            if (keys[37]) {
-                x -= 1;
-                if (dir == 'right') {
-                    duckLeft();
-                }
-            }
-            if (keys[39]) {
-                x += 1;
-                if (dir == 'left') {
-                    duckRight();
-                }
-            }
-            if (keys[38]) {
-                y -= 1;
-            }
-            if (keys[40]) {
-                y += 1;
-            }
-
-            duck.style.top = y + "px";
-            duck.style.left = x + "px";
-
-            setTimeout(update, 5);
-        }
-        update();
 
     </script>
 </body>
